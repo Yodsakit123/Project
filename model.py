@@ -2,7 +2,7 @@ import torchvision.models as models
 import torch.nn as nn
 
 def create_model(num_classes):
-    model = models.squeezenet1_0(pretrained=True)
+    model = squeezenet1_0(weights=SqueezeNet1_0_Weights.IMAGENET1K_V1)
 
     # Freeze earlier layers (Recommended for transfer learning)
     for param in model.features.parameters():
