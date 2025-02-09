@@ -16,10 +16,15 @@ test_loader = DataLoader(imdsTest, batch_size=32, shuffle=False)
 model = create_model(len(dataset.classes))
 model = train_model(model, train_loader)
 
-# Convert true labels (TTest) from indices to class names
-TTest = [dataset.classes[label] for _, label in imdsTest]  
+# Convert TTest (True Labels) to Strings
+TTest = [dataset.classes[label] for _, label in imdsTest]
 
-YTest = [str(label) for label in YTest]  
+# Convert YTest (Predicted Labels) to Strings
+YTest = [dataset.classes[int(label)] if isinstance(label, int) else str(label) for label in YTest]
 
+print("TTest Sample:", TTest[:5], "Type:", type(TTest[0]))
+print("YTest Sample:", YTest[:5], "Type:", type(YTest[0]))
+
+# Plot Confusion Matrix
 plot_confusion_matrix(TTest, YTest, dataset.classes)
 
