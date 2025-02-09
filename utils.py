@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
 
-def plot_confusion_matrix(TTest, YTest, class_names):
+def plot_confusion_matrix(TTest, YTest, class_names, save_path="confusion_matrix.png"):
     conf_matrix = confusion_matrix(TTest, YTest)
 
     plt.figure(figsize=(6,6))
@@ -12,5 +12,6 @@ def plot_confusion_matrix(TTest, YTest, class_names):
     plt.ylabel("True Labels")
     plt.title("Confusion Matrix")
 
-    plt.pause(1)#colab fix
-    plt.show()
+    plt.savefig(save_path)  # Save the plot as an image
+    print(f"Confusion matrix saved as {save_path}")
+
