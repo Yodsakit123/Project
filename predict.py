@@ -12,9 +12,9 @@ def predict_model(model, test_loader, class_names):
         for inputs, _ in test_loader:
             inputs = inputs.to(device)
             outputs = model(inputs)
-            YTest_scores.extend(outputs.cpu().numpy())  # Move to CPU for processing
+            YTest_scores.extend(outputs.cpu().numpy()) 
 
-    # Debugging: Print raw outputs
+    
     print("Raw YTest_scores:", YTest_scores[:5])
 
     if len(YTest_scores) == 0:
@@ -27,7 +27,7 @@ def predict_model(model, test_loader, class_names):
     # Convert indices to class names
     YTest_labels = [class_names[i] for i in YTest_indices]
 
-    # Debugging: Print final predicted labels
+
     print("Final Predicted Labels:", YTest_labels[:5])
 
     return YTest_labels
