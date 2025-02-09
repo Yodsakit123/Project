@@ -1,0 +1,5 @@
+1st train:
+Raw YTest_scores: [array([8.057606e-05, 9.999194e-01], dtype=float32), array([9.9903488e-01, 9.6512167e-04], dtype=float32), array([1.360602e-05, 9.999864e-01], dtype=float32), array([9.9979216e-01, 2.0780342e-04], dtype=float32), array([9.999689e-01, 3.115972e-05], dtype=float32)]
+Final Predicted Labels: ['torch', 'hat', 'torch', 'hat', 'hat']
+TTest Sample: ['torch', 'hat', 'torch', 'hat', 'hat']
+YTest Sample: ['torch', 'hat', 'torch', 'hat', 'hat']

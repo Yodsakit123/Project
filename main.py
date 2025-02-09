@@ -5,6 +5,7 @@ from predict import predict_model
 from utils import plot_confusion_matrix
 from sklearn.metrics import accuracy_score
 from torch.utils.data import DataLoader
+import matplotlib.pyplot as plt
 
 # Load dataset
 dataset, imdsTrain, imdsValidation, imdsTest = load_data("testimage")
@@ -44,3 +45,5 @@ print(f"Model Accuracy: {accuracy * 100:.2f}%")
 
 # Plot Confusion Matrix
 plot_confusion_matrix(TTest, YTest, dataset.classes)
+
+plt.show(block=True)
