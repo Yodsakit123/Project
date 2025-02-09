@@ -46,4 +46,5 @@ print(f"Model Accuracy: {accuracy * 100:.2f}%")
 # Plot Confusion Matrix
 plot_confusion_matrix(TTest, YTest, dataset.classes)
 
+#force Colab to show graph
 plt.show(block=True)

@@ -11,4 +11,6 @@ def plot_confusion_matrix(TTest, YTest, class_names):
     plt.xlabel("Predicted Labels")
     plt.ylabel("True Labels")
     plt.title("Confusion Matrix")
+
+    plt.pause(1)#colab fix
     plt.show()
