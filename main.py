@@ -16,9 +16,10 @@ test_loader = DataLoader(imdsTest, batch_size=32, shuffle=False)
 model = create_model(len(dataset.classes))
 model = train_model(model, train_loader)
 
-# Predict Labels
-YTest = predict_model(model, test_loader, dataset.classes)
+# Convert true labels (TTest) from indices to class names
+TTest = [dataset.classes[label] for _, label in imdsTest]  
 
-# Plot Confusion Matrix
-TTest = [label for _, label in imdsTest]  # Extract true labels
+YTest = [str(label) for label in YTest]  
+
 plot_confusion_matrix(TTest, YTest, dataset.classes)
+

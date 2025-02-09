@@ -12,9 +12,9 @@ def predict_model(model, test_loader, class_names):
     YTest_scores = []
     with torch.no_grad():
         for inputs, _ in test_loader:
-            inputs = inputs.to(device)  # Move inputs to the same device as model
+            inputs = inputs.to(device)  
             outputs = model(inputs)
-            YTest_scores.extend(outputs.cpu().numpy())  # Move back to CPU for processing
+            YTest_scores.extend(outputs.cpu().numpy())  
 
     YTest = np.argmax(YTest_scores, axis=1)
     return [class_names[i] for i in YTest]
