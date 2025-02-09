@@ -1,0 +1,8 @@
+1st train:
+Raw YTest_scores: [array([0.11831042, 0.88168955], dtype=float32), array([0.1468916, 0.8531084], dtype=float32), array([0.9207872 , 0.07921281], dtype=float32), array([0.13797207, 0.862028  ], dtype=float32), array([0.9565078 , 0.04349213], dtype=float32)]
+Final Predicted Labels: ['torch', 'torch', 'hat', 'torch', 'hat']
+TTest Sample: ['torch', 'torch', 'hat', 'torch', 'hat']
+YTest Sample: ['torch', 'torch', 'hat', 'torch', 'hat']
+Model Accuracy: 100.00%
+Confusion matrix saved as confusion_matrix.png
+Figure(600x600)
