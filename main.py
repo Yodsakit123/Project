@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 
 # Load dataset
-dataset, imdsTrain, imdsValidation, imdsTest = load_data("testimage")
+dataset, imdsTrain, imdsValidation, imdsTest = load_data("image")
 
 # Debug: Print classes
 print("Classes found:", dataset.classes)
