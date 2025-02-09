@@ -6,7 +6,7 @@ def train_model(model, train_loader, num_epochs=50):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
 
-    optimizer = optim.Adam(model.parameters())
+    optimizer = optim.Adam(model.parameters(), lr=0.0001)  # Reduced learning rate for stability
     criterion = nn.CrossEntropyLoss()  # Use CrossEntropy for multi-class classification
 
     for epoch in range(num_epochs):

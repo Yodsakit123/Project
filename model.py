@@ -1,10 +1,12 @@
 import torchvision.models as models
 import torch.nn as nn
+from torchvision.models import SqueezeNet1_0_Weights
 
 def create_model(num_classes):
-    model = squeezenet1_0(weights=SqueezeNet1_0_Weights.IMAGENET1K_V1)
+    # Load SqueezeNet with updated weights syntax
+    model = models.squeezenet1_0(weights=SqueezeNet1_0_Weights.IMAGENET1K_V1)
 
-    # Freeze earlier layers (Recommended for transfer learning)
+    # Freeze earlier layers (transfer learning)
     for param in model.features.parameters():
         param.requires_grad = False  
 
